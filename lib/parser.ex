@@ -2,7 +2,7 @@ defmodule GenReport.Parser do
   def parse_file(file_name) do
     file_name
     |> File.stream!()
-    |> Enum.map(&parse_line/1)
+    |> Stream.map(&parse_line/1)
   end
 
   defp parse_line(line) do
