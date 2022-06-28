@@ -17,6 +17,16 @@ defmodule GenReport do
     }
   end
 
+  def build_many() do
+    {:error, "Insira um lista contendo os nomes dos arquivos"}
+  end
+
+  def build_many(files) when is_list(files) do
+    files
+    |> Task.async_stream(&build/1)
+    |> Enum.reduce(nil, &sum_reports/2)
+  end
+
   defp get_all_hours(list, acc) do
     name_key = Enum.at(list, 0)
     hours = Enum.at(list, 1)
@@ -67,5 +77,21 @@ defmodule GenReport do
       end)
 
     hours_per_year
+  end
+
+  defp sum_reports({:ok, value}, acc) when is_nil(acc) do
+    value
+  end
+
+  defp sum_reports({:ok, value}, acc) do
+    Map.merge(acc, value, &sum_maps/3)
+  end
+
+  defp sum_maps(_key, cur_value, new_value) when is_map(cur_value) do
+    Map.merge(cur_value, new_value, &sum_maps/3)
+  end
+
+  defp sum_maps(_key, cur_value, new_value) do
+    cur_value + new_value
   end
 end
