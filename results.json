@@ -1,0 +1,43 @@
+{
+  "excluded": [],
+  "failed": [],
+  "invalid": [],
+  "passed": [
+    {
+      "describe": "parse_file/1",
+      "file": "c:/Users/ruanm/Documents/Github/ignite/elixir-challenges/4th-challenge-ignite-elixir/test/parser_test.exs",
+      "line": 7,
+      "module": "Elixir.GenReport.ParserTest",
+      "test": "test parse_file/1 parses the file"
+    },
+    {
+      "describe": "build_many/1",
+      "file": "c:/Users/ruanm/Documents/Github/ignite/elixir-challenges/4th-challenge-ignite-elixir/test/gen_report_test.exs",
+      "line": 25,
+      "module": "Elixir.GenReportTest",
+      "test": "test build_many/1 When passing a list of files return a report"
+    },
+    {
+      "describe": "build/1",
+      "file": "c:/Users/ruanm/Documents/Github/ignite/elixir-challenges/4th-challenge-ignite-elixir/test/gen_report_test.exs",
+      "line": 17,
+      "module": "Elixir.GenReportTest",
+      "test": "test build/1 When no filename was given, returns an error"
+    },
+    {
+      "describe": "build_many/1",
+      "file": "c:/Users/ruanm/Documents/Github/ignite/elixir-challenges/4th-challenge-ignite-elixir/test/gen_report_test.exs",
+      "line": 31,
+      "module": "Elixir.GenReportTest",
+      "test": "test build_many/1 When no list was given, returns an error"
+    },
+    {
+      "describe": "build/1",
+      "file": "c:/Users/ruanm/Documents/Github/ignite/elixir-challenges/4th-challenge-ignite-elixir/test/gen_report_test.exs",
+      "line": 11,
+      "module": "Elixir.GenReportTest",
+      "test": "test build/1 When passing file name return a report"
+    }
+  ],
+  "skiped": []
+}
